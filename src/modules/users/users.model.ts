@@ -15,6 +15,6 @@ const userSchema = new Schema<IUserType>(
 )
 
 export const UserModel = mongoose.model<IUserType, UserModelMethod>(
-  'User',
+  'Users',
   userSchema
 )
