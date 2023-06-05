@@ -1,3 +1,5 @@
+import { Model } from 'mongoose'
+
 export type IUserType = {
   id: string
   password: string
@@ -7,3 +9,5 @@ export type IUserType = {
   // updateDate
   // studentId || adminId || facultyId
 }
+
+export type UserModelMethod = Model<IUserType, Record<string, unknown>>
