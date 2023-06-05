@@ -1,6 +1,6 @@
-import { UserModel } from './users.model'
-import { IUserType } from './users.interface'
-import { createUserId } from './users.utils'
+import { UserModel } from './user.model'
+import { IUserType } from './user.interface'
+import { createUserId } from './user.utils'
 import config from '../../../config'
 
 export const createUserService = async (
