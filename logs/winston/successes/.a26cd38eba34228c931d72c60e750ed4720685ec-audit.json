@@ -49,6 +49,11 @@
             "date": 1686107797502,
             "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-07-06-09.log",
             "hash": "59bdbcf191e91f97006300c8a36702a4a30ce978088f01db799f575f553eb837"
+        },
+        {
+            "date": 1686155591504,
+            "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-07-06-22.log",
+            "hash": "e64bab93f4a9d9e1f3c3d70e52aa8c9c595f7680647c16a5a55a6be6a9861238"
         }
     ],
     "hashType": "sha256"
