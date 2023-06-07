@@ -1,5 +1,5 @@
-import mongoose, { Schema } from 'mongoose'
-import { IUserType, UserModelMethod } from './user.interface'
+import mongoose, { Schema } from 'mongoose';
+import { IUserType, UserModelMethod } from './user.interface';
 
 const userSchema = new Schema<IUserType>(
   {
@@ -10,9 +10,9 @@ const userSchema = new Schema<IUserType>(
   {
     timestamps: true,
   }
-)
+);
 
 export const UserModel = mongoose.model<IUserType, UserModelMethod>(
   'Users',
   userSchema
-)
+);

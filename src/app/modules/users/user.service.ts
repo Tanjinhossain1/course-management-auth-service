@@ -1,23 +1,23 @@
-import { UserModel } from './user.model'
-import { IUserType } from './user.interface'
-import { createUserId } from './user.utils'
-import config from '../../../config'
+import { UserModel } from './user.model';
+import { IUserType } from './user.interface';
+import { createUserId } from './user.utils';
+import config from '../../../config';
 
 export const createUserService = async (
   user: IUserType
 ): Promise<IUserType | null> => {
-  const id = await createUserId()
-  user.id = id
+  const id = await createUserId();
+  user.id = id;
 
   if (!user.password) {
-    user.password = config.default_user_password as string
+    user.password = config.default_user_password as string;
   }
 
-  const createUser = await UserModel.create(user)
+  const createUser = await UserModel.create(user);
 
   if (!createUser) {
-    throw new Error('Failed Create User')
+    throw new Error('Failed Create User');
   }
 
-  return createUser
-}
+  return createUser;
+};
