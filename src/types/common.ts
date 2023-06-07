@@ -1,7 +1,7 @@
-import { IGenericErrorMessage } from './errors'
+import { IGenericErrorMessage } from './errors';
 
 export interface IErrorReturnResponseType {
-  statusCode: number | number
-  message: string
-  errorMessages: IGenericErrorMessage[]
+  statusCode: number | number;
+  message: string;
+  errorMessages: IGenericErrorMessage[];
 }
