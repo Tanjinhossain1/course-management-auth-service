@@ -59,6 +59,16 @@
             "date": 1686199195066,
             "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-08-06-10.log",
             "hash": "c0423a3399277051e3feaf2db162a165ff3a91a01d9aaa971d16be6a7589eef3"
+        },
+        {
+            "date": 1686242706348,
+            "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-08-06-22.log",
+            "hash": "cbf72403112077463249a86386c89ca7871d869e6e7924e6b0b04550a6124499"
+        },
+        {
+            "date": 1686243668264,
+            "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-08-06-23.log",
+            "hash": "9304ba807eaaeca8e187bacb1f1ac6322cc231eb6b10ac166586b4e1addbe497"
         }
     ],
     "hashType": "sha256"
