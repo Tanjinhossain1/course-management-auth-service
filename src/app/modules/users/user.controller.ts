@@ -1,18 +1,20 @@
-import { RequestHandler } from 'express';
+import { NextFunction, Request, RequestHandler, Response } from 'express';
 import { createUserService } from './user.service';
+import { clearableAsync } from '../../../shareble/clearableAsync';
+import httpStatus from 'http-status';
+import { sendResponse } from '../../../shareble/sendResponce';
 
-export const createUserController: RequestHandler = async (req, res, next) => {
-  try {
-    const { user } = req.body;
+export const createUserController: RequestHandler = clearableAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
+    // const { user } = req.body;
 
-    const result = await createUserService(user);
-
-    res.status(200).json({
+    const result = await createUserService(req.body);
+    sendResponse(res, {
+      statusCode: httpStatus.OK,
       success: true,
-      message: 'User Create SuccessFully ',
+      message: 'User Create SuccessFully',
       data: result,
     });
-  } catch (err) {
-    next(err);
+    next();
   }
-};
+);

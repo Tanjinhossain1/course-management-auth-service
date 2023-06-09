@@ -26,6 +26,7 @@ academicSemesterSchema.pre('save', async function (next) {
     title: this.title,
     year: this.year,
   });
+
   if (isExist) {
     throw new ApiError(
       httpStatus.CONFLICT,

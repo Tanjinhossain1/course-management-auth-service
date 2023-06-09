@@ -1,22 +1,20 @@
-import { RequestHandler } from 'express';
 import { createAcademicSemester } from './academicSemester.service';
+import { clearableAsync } from '../../../shareble/clearableAsync';
+import { NextFunction, Request, Response } from 'express';
+import { sendResponse } from '../../../shareble/sendResponce';
+import httpStatus from 'http-status';
 
-export const createAcademicSemesterController: RequestHandler = async (
-  req,
-  res,
-  next
-) => {
-  try {
-    const academic_detail = req.body;
+export const createAcademicSemesterController = clearableAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
+    const academicSemesterData = req.body;
+    const result = await createAcademicSemester(academicSemesterData);
 
-    const result = await createAcademicSemester(academic_detail);
-
-    res.status(200).json({
+    sendResponse(res, {
+      statusCode: httpStatus.OK,
       success: true,
-      message: 'Academic Semester Create SuccessFully ',
+      message: 'Academic Semester Create SuccessFully',
       data: result,
     });
-  } catch (err) {
-    next(err);
+    next();
   }
-};
+);
