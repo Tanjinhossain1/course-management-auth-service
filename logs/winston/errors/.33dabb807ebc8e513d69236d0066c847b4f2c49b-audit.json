@@ -79,6 +79,11 @@
             "date": 1686283219795,
             "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\errors\\error-2023-09-06-10.log",
             "hash": "db8cda5328829ba1b082af7f8d7d39e5b714ed8403403dd52c40ad13107ce528"
+        },
+        {
+            "date": 1686310529136,
+            "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\errors\\error-2023-09-06-17.log",
+            "hash": "b89a81affa62e498480efd19c6f31dcfda709a71ad3726d5d35869d16f9cdf10"
         }
     ],
     "hashType": "sha256"
