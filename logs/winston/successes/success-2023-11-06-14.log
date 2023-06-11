@@ -1,0 +1,12 @@
+{
+  message: 'connect to mongoose',
+  level: 'info',
+  label: 'TH',
+  timestamp: '2023-06-11T08:15:42.497Z'
+}
+{
+  message: 'Example app listening on port 5000',
+  level: 'info',
+  label: 'TH',
+  timestamp: '2023-06-11T08:15:42.502Z'
+}

@@ -1,7 +1,10 @@
 import express from 'express';
 import { ValidationRequest } from '../../midlewares/validateRequest';
 import { academicSemesterSchemaValidation } from './academicSemester.validation';
-import { createAcademicSemesterController } from './academicSemester.controller';
+import {
+  createAcademicSemesterController,
+  getAllAccountSemestersController,
+} from './academicSemester.controller';
 
 const academicSemesterRouter = express.Router();
 
@@ -10,5 +13,7 @@ academicSemesterRouter.post(
   ValidationRequest(academicSemesterSchemaValidation),
   createAcademicSemesterController
 );
+
+academicSemesterRouter.get('/', getAllAccountSemestersController);
 
 export default academicSemesterRouter;

@@ -84,6 +84,36 @@
             "date": 1686310529136,
             "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\errors\\error-2023-09-06-17.log",
             "hash": "b89a81affa62e498480efd19c6f31dcfda709a71ad3726d5d35869d16f9cdf10"
+        },
+        {
+            "date": 1686463485075,
+            "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\errors\\error-2023-11-06-12.log",
+            "hash": "785915c4678fb06a3dfcaf9a62480116d96421d25436ce5130ee8f6961c4b583"
+        },
+        {
+            "date": 1686471338591,
+            "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\errors\\error-2023-11-06-14.log",
+            "hash": "221990b8d596c91e82d8bd452f1cc573fea4e0afe5815d3bac39e495f98ccda5"
+        },
+        {
+            "date": 1686485691541,
+            "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\errors\\error-2023-11-06-18.log",
+            "hash": "52dadfe86c819fb52f5457d5af29f7a1178f763aeabc4f02902ed33b59942b0b"
+        },
+        {
+            "date": 1686489423512,
+            "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\errors\\error-2023-11-06-19.log",
+            "hash": "28971dca750b5e0bcece2f113c6cb894e3af4726216ad8c807466fdf21ad6103"
+        },
+        {
+            "date": 1686498346698,
+            "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\errors\\error-2023-11-06-21.log",
+            "hash": "32a5b358c5771c042e033d07b1a19a169f931a29e9916b7f546170c1c9d8e5ab"
+        },
+        {
+            "date": 1686499214543,
+            "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\errors\\error-2023-11-06-22.log",
+            "hash": "57ec21ce3fdac8612db70a375f47c2457f726b165314209afe873eb6f21bd251"
         }
     ],
     "hashType": "sha256"

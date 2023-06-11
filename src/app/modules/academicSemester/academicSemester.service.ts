@@ -1,6 +1,15 @@
+import { SortOrder } from 'mongoose';
 import ApiError from '../../../errors/ApiError';
-import { titleCodeMapper } from './academicSemester.constant';
-import { IAcademicSemesterType } from './academicSemester.interface';
+import { calculatePagination } from '../../../helper/paginationHelper';
+import {
+  IGenericPaginatedType,
+  IPaginationOptionType,
+} from '../../../types/common';
+import { searchableFields, titleCodeMapper } from './academicSemester.constant';
+import {
+  IAcademicSemesterFilterType,
+  IAcademicSemesterType,
+} from './academicSemester.interface';
 import { academicSemester } from './academicSemester.model';
 import httpStatus from 'http-status';
 
@@ -18,4 +27,57 @@ export const createAcademicSemester = async (
 
   const result = await academicSemester.create(academic_semester);
   return result;
+};
+
+export const getAllSemesterServices = async (
+  filters: IAcademicSemesterFilterType,
+  pagination: IPaginationOptionType
+): Promise<IGenericPaginatedType<IAcademicSemesterType[]> | null> => {
+  const { searchTerm, ...filtersData } = filters;
+
+  const { skip, limit, page, sortBy, sortOrder } =
+    calculatePagination(pagination);
+  const sortConditions: { [key: string]: SortOrder } = {};
+
+  const andConditions = [];
+
+  if (searchTerm) {
+    andConditions.push({
+      $or: searchableFields.map(field => ({
+        [field]: {
+          $regex: searchTerm,
+          $options: 'i',
+        },
+      })),
+    });
+  }
+
+  if (Object.keys(filtersData).length) {
+    andConditions.push({
+      $and: Object.entries(filtersData).map(([field, value]) => ({
+        [field]: value,
+      })),
+    });
+  }
+
+  if (sortBy && sortOrder) {
+    sortConditions[sortBy] = sortOrder;
+  }
+
+  const result = await academicSemester
+    .find({ $and: andConditions })
+    .sort(sortConditions)
+    .skip(skip)
+    .limit(limit);
+
+  const total = await academicSemester.countDocuments();
+
+  return {
+    paginated: {
+      page,
+      limit,
+      total,
+    },
+    data: result,
+  };
 };
