@@ -47,3 +47,25 @@ export const validationZodError = (
     message: 'Validation Error',
   };
 };
+
+/* ****************************************************************** */
+/* ****************  handle Cast error   ****************** */
+/* ****************************************************************** */
+
+export const validationCastError = (
+  error: mongoose.Error.CastError
+): IErrorReturnResponseType => {
+  const errors: IGenericErrorMessage[] = [
+    {
+      path: error.path,
+      message: 'Invalid Id',
+    },
+  ];
+
+  const statusCode = 400;
+  return {
+    statusCode: statusCode,
+    errorMessages: errors,
+    message: 'Cast Error',
+  };
+};
