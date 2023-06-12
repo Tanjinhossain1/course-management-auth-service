@@ -4,23 +4,25 @@ import {
   IGenericPaginatedType,
   IPaginationOptionType,
 } from '../../../types/common';
-import { searchableFields } from './academicFaculty.constant';
+import { searchableFields } from './academicDepartment.constant';
 import {
-  IAcademicFacultyFilterType,
-  IAcademicFacultyType,
-} from './academicFaculty.interface';
-import { academicFaculty } from './academicFaculty.model';
-export const createAcademicFaculty = async (
-  academic_faculty: IAcademicFacultyType
-): Promise<IAcademicFacultyType | null> => {
-  const result = await academicFaculty.create(academic_faculty);
+  IAcademicDepartmentFilterType,
+  IAcademicDepartmentType,
+} from './academicDepartment.interface';
+import { academicDepartment } from './academicDepartment.model';
+export const createAcademicDepartment = async (
+  academic_Department: IAcademicDepartmentType
+): Promise<IAcademicDepartmentType | null> => {
+  const result = (
+    await academicDepartment.create(academic_Department)
+  ).populate('academicFaculty');
   return result;
 };
 
-export const getAllFacultyServices = async (
-  filters: IAcademicFacultyFilterType,
+export const getAllDepartmentServices = async (
+  filters: IAcademicDepartmentFilterType,
   pagination: IPaginationOptionType
-): Promise<IGenericPaginatedType<IAcademicFacultyType[]> | null> => {
+): Promise<IGenericPaginatedType<IAcademicDepartmentType[]> | null> => {
   const { searchTerm, ...filtersData } = filters;
 
   const { skip, limit, page, sortBy, sortOrder } =
@@ -55,13 +57,14 @@ export const getAllFacultyServices = async (
     sortConditions[sortBy] = sortOrder;
   }
 
-  const result = await academicFaculty
+  const result = await academicDepartment
     .find(filteringCondition)
+    .populate('academicFaculty')
     .sort(sortConditions)
     .skip(skip)
     .limit(limit);
 
-  const total = await academicFaculty.countDocuments();
+  const total = await academicDepartment.countDocuments();
 
   return {
     paginated: {
@@ -73,19 +76,19 @@ export const getAllFacultyServices = async (
   };
 };
 
-export const getSingleFacultyService = async (
+export const getSingleDepartmentService = async (
   id: string
-): Promise<IAcademicFacultyType | null> => {
-  const result = await academicFaculty.findById(id);
+): Promise<IAcademicDepartmentType | null> => {
+  const result = await academicDepartment.findById(id);
 
   return result;
 };
 
-export const updateSingleFacultyService = async (
+export const updateSingleDepartmentService = async (
   id: string,
-  updateData: Partial<IAcademicFacultyType>
-): Promise<IAcademicFacultyType | null> => {
-  const result = await academicFaculty.findOneAndUpdate(
+  updateData: Partial<IAcademicDepartmentType>
+): Promise<IAcademicDepartmentType | null> => {
+  const result = await academicDepartment.findOneAndUpdate(
     { _id: id },
     updateData,
     {
@@ -96,10 +99,10 @@ export const updateSingleFacultyService = async (
   return result;
 };
 
-export const deleteSingleFacultyService = async (
+export const deleteSingleDepartmentService = async (
   id: string
-): Promise<IAcademicFacultyType | null> => {
-  const result = await academicFaculty.findByIdAndDelete({ _id: id });
+): Promise<IAcademicDepartmentType | null> => {
+  const result = await academicDepartment.findByIdAndDelete({ _id: id });
 
   return result;
 };

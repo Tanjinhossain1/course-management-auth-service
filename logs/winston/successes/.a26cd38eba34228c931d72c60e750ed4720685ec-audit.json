@@ -1,140 +1,140 @@
 {
-    "keep": {
-        "days": true,
-        "amount": 14
+  "keep": {
+    "days": true,
+    "amount": 14
+  },
+  "auditLog": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\.a26cd38eba34228c931d72c60e750ed4720685ec-audit.json",
+  "files": [
+    {
+      "date": 1685725346822,
+      "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-02-06-23.log",
+      "hash": "fe5e2f7f729cae1e1d8746b48b5f2ff1d2f25454e58daeb07ec4dc2b04a86c20"
     },
-    "auditLog": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\.a26cd38eba34228c931d72c60e750ed4720685ec-audit.json",
-    "files": [
-        {
-            "date": 1685725346822,
-            "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-02-06-23.log",
-            "hash": "fe5e2f7f729cae1e1d8746b48b5f2ff1d2f25454e58daeb07ec4dc2b04a86c20"
-        },
-        {
-            "date": 1685873565255,
-            "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-04-06-16.log",
-            "hash": "f865fb2d16985fe07ec848acd1b61edc1b658aed7128335bf9fbfa226902801d"
-        },
-        {
-            "date": 1685876585937,
-            "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-04-06-17.log",
-            "hash": "a78a068f0fe89e695ba6eff7d0eb70ccfbef75880e15345c57778993421dfc31"
-        },
-        {
-            "date": 1685896695093,
-            "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-04-06-22.log",
-            "hash": "8d7d33587fdeb86b54db5569670b6cadac54f2d204cce5195af54e39ab953d16"
-        },
-        {
-            "date": 1685899215141,
-            "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-04-06-23.log",
-            "hash": "01c95d654740de78da4f35caee39707f08c902606190b384357e919a717e5b2d"
-        },
-        {
-            "date": 1685934506593,
-            "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-05-06-09.log",
-            "hash": "143709a8f5b1c9b408b1344ad2b6ca085d3aeff7e4868f9350ef459aac942cf3"
-        },
-        {
-            "date": 1685937627725,
-            "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-05-06-10.log",
-            "hash": "6f0db56505f412f633b7030fd322d96516fab16995eea17c143ae916a831a8fc"
-        },
-        {
-            "date": 1686105878963,
-            "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-07-06-08.log",
-            "hash": "5ff40b89f3aaa005dde59731bbbca028bb064e0afba071e2277abe7d7984efab"
-        },
-        {
-            "date": 1686107797502,
-            "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-07-06-09.log",
-            "hash": "59bdbcf191e91f97006300c8a36702a4a30ce978088f01db799f575f553eb837"
-        },
-        {
-            "date": 1686155591504,
-            "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-07-06-22.log",
-            "hash": "e64bab93f4a9d9e1f3c3d70e52aa8c9c595f7680647c16a5a55a6be6a9861238"
-        },
-        {
-            "date": 1686199195066,
-            "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-08-06-10.log",
-            "hash": "c0423a3399277051e3feaf2db162a165ff3a91a01d9aaa971d16be6a7589eef3"
-        },
-        {
-            "date": 1686242706348,
-            "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-08-06-22.log",
-            "hash": "cbf72403112077463249a86386c89ca7871d869e6e7924e6b0b04550a6124499"
-        },
-        {
-            "date": 1686243668264,
-            "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-08-06-23.log",
-            "hash": "9304ba807eaaeca8e187bacb1f1ac6322cc231eb6b10ac166586b4e1addbe497"
-        },
-        {
-            "date": 1686281793012,
-            "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-09-06-09.log",
-            "hash": "ec3ecb0d3240351659fdedea3559a038bca58e94635f4db038e3f99b7d18f918"
-        },
-        {
-            "date": 1686283219792,
-            "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-09-06-10.log",
-            "hash": "9e664f4b254ac37d975340bf18908fcdb34aab31107f9be09f27d3d2d434d8ac"
-        },
-        {
-            "date": 1686310529118,
-            "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-09-06-17.log",
-            "hash": "53b1568d88f51e18ee481425dc8a74966fa60fa78c29977e87380561891814aa"
-        },
-        {
-            "date": 1686463485048,
-            "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-11-06-12.log",
-            "hash": "48bdc86bc7350734d23232503ff06e75f2ec0e90e366e049a0d0f01e1ca2b8b9"
-        },
-        {
-            "date": 1686471338584,
-            "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-11-06-14.log",
-            "hash": "0906f75bea89e735a6b3e305f0ff50e2b7815fcda093cb75296d45b3fedbb68d"
-        },
-        {
-            "date": 1686485691538,
-            "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-11-06-18.log",
-            "hash": "e882c581416c90b7652f2ccecdca5d485e9a362464a5b4213fde0a4118f59b28"
-        },
-        {
-            "date": 1686489423505,
-            "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-11-06-19.log",
-            "hash": "1254f63838ef2c6a694db1a39f9c626d5156dcfbdfbeb331f7c4172d980f9e14"
-        },
-        {
-            "date": 1686498346694,
-            "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-11-06-21.log",
-            "hash": "91fc7643b8068c81cce7be55084857f7c8e44b7077812adf2dbc701a9b38277e"
-        },
-        {
-            "date": 1686499214541,
-            "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-11-06-22.log",
-            "hash": "9edecec7849beb172d5bbae7920f61313ca2c3be92bed31666c5ca51b4c8ad62"
-        },
-        {
-            "date": 1686539633425,
-            "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-12-06-09.log",
-            "hash": "d52e3a548a722aef64018e293b0ca8d8f9c26e3e6b57eaf9d00e75e8d2d37cfe"
-        },
-        {
-            "date": 1686542647619,
-            "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-12-06-10.log",
-            "hash": "17d9357102e62b204067a7d33488dce9a7b23407fd404c6f6775834df06e4cc7"
-        },
-        {
-            "date": 1686586548058,
-            "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-12-06-22.log",
-            "hash": "9aaa2e2dce132b52f611649c28f3009de6988e9434b1554c8ad345bb8faf0315"
-        },
-        {
-            "date": 1686590083258,
-            "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-12-06-23.log",
-            "hash": "81786d62142cc6e8f2fb9925400a643d6d1ec5a602165a8d515111b3b173a480"
-        }
-    ],
-    "hashType": "sha256"
+    {
+      "date": 1685873565255,
+      "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-04-06-16.log",
+      "hash": "f865fb2d16985fe07ec848acd1b61edc1b658aed7128335bf9fbfa226902801d"
+    },
+    {
+      "date": 1685876585937,
+      "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-04-06-17.log",
+      "hash": "a78a068f0fe89e695ba6eff7d0eb70ccfbef75880e15345c57778993421dfc31"
+    },
+    {
+      "date": 1685896695093,
+      "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-04-06-22.log",
+      "hash": "8d7d33587fdeb86b54db5569670b6cadac54f2d204cce5195af54e39ab953d16"
+    },
+    {
+      "date": 1685899215141,
+      "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-04-06-23.log",
+      "hash": "01c95d654740de78da4f35caee39707f08c902606190b384357e919a717e5b2d"
+    },
+    {
+      "date": 1685934506593,
+      "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-05-06-09.log",
+      "hash": "143709a8f5b1c9b408b1344ad2b6ca085d3aeff7e4868f9350ef459aac942cf3"
+    },
+    {
+      "date": 1685937627725,
+      "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-05-06-10.log",
+      "hash": "6f0db56505f412f633b7030fd322d96516fab16995eea17c143ae916a831a8fc"
+    },
+    {
+      "date": 1686105878963,
+      "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-07-06-08.log",
+      "hash": "5ff40b89f3aaa005dde59731bbbca028bb064e0afba071e2277abe7d7984efab"
+    },
+    {
+      "date": 1686107797502,
+      "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-07-06-09.log",
+      "hash": "59bdbcf191e91f97006300c8a36702a4a30ce978088f01db799f575f553eb837"
+    },
+    {
+      "date": 1686155591504,
+      "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-07-06-22.log",
+      "hash": "e64bab93f4a9d9e1f3c3d70e52aa8c9c595f7680647c16a5a55a6be6a9861238"
+    },
+    {
+      "date": 1686199195066,
+      "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-08-06-10.log",
+      "hash": "c0423a3399277051e3feaf2db162a165ff3a91a01d9aaa971d16be6a7589eef3"
+    },
+    {
+      "date": 1686242706348,
+      "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-08-06-22.log",
+      "hash": "cbf72403112077463249a86386c89ca7871d869e6e7924e6b0b04550a6124499"
+    },
+    {
+      "date": 1686243668264,
+      "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-08-06-23.log",
+      "hash": "9304ba807eaaeca8e187bacb1f1ac6322cc231eb6b10ac166586b4e1addbe497"
+    },
+    {
+      "date": 1686281793012,
+      "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-09-06-09.log",
+      "hash": "ec3ecb0d3240351659fdedea3559a038bca58e94635f4db038e3f99b7d18f918"
+    },
+    {
+      "date": 1686283219792,
+      "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-09-06-10.log",
+      "hash": "9e664f4b254ac37d975340bf18908fcdb34aab31107f9be09f27d3d2d434d8ac"
+    },
+    {
+      "date": 1686310529118,
+      "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-09-06-17.log",
+      "hash": "53b1568d88f51e18ee481425dc8a74966fa60fa78c29977e87380561891814aa"
+    },
+    {
+      "date": 1686463485048,
+      "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-11-06-12.log",
+      "hash": "48bdc86bc7350734d23232503ff06e75f2ec0e90e366e049a0d0f01e1ca2b8b9"
+    },
+    {
+      "date": 1686471338584,
+      "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-11-06-14.log",
+      "hash": "0906f75bea89e735a6b3e305f0ff50e2b7815fcda093cb75296d45b3fedbb68d"
+    },
+    {
+      "date": 1686485691538,
+      "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-11-06-18.log",
+      "hash": "e882c581416c90b7652f2ccecdca5d485e9a362464a5b4213fde0a4118f59b28"
+    },
+    {
+      "date": 1686489423505,
+      "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-11-06-19.log",
+      "hash": "1254f63838ef2c6a694db1a39f9c626d5156dcfbdfbeb331f7c4172d980f9e14"
+    },
+    {
+      "date": 1686498346694,
+      "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-11-06-21.log",
+      "hash": "91fc7643b8068c81cce7be55084857f7c8e44b7077812adf2dbc701a9b38277e"
+    },
+    {
+      "date": 1686499214541,
+      "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-11-06-22.log",
+      "hash": "9edecec7849beb172d5bbae7920f61313ca2c3be92bed31666c5ca51b4c8ad62"
+    },
+    {
+      "date": 1686539633425,
+      "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-12-06-09.log",
+      "hash": "d52e3a548a722aef64018e293b0ca8d8f9c26e3e6b57eaf9d00e75e8d2d37cfe"
+    },
+    {
+      "date": 1686542647619,
+      "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-12-06-10.log",
+      "hash": "17d9357102e62b204067a7d33488dce9a7b23407fd404c6f6775834df06e4cc7"
+    },
+    {
+      "date": 1686586548058,
+      "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-12-06-22.log",
+      "hash": "9aaa2e2dce132b52f611649c28f3009de6988e9434b1554c8ad345bb8faf0315"
+    },
+    {
+      "date": 1686590083258,
+      "name": "I:\\bigProject\\student-management-auth-service\\logs\\winston\\successes\\success-2023-12-06-23.log",
+      "hash": "81786d62142cc6e8f2fb9925400a643d6d1ec5a602165a8d515111b3b173a480"
+    }
+  ],
+  "hashType": "sha256"
 }
