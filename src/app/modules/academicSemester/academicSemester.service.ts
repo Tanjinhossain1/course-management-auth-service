@@ -60,12 +60,15 @@ export const getAllSemesterServices = async (
     });
   }
 
+  const filteringCondition =
+    andConditions.length > 0 ? { $and: andConditions } : {};
+
   if (sortBy && sortOrder) {
     sortConditions[sortBy] = sortOrder;
   }
 
   const result = await academicSemester
-    .find({ $and: andConditions })
+    .find(filteringCondition)
     .sort(sortConditions)
     .skip(skip)
     .limit(limit);
@@ -80,4 +83,44 @@ export const getAllSemesterServices = async (
     },
     data: result,
   };
+};
+
+export const getSingleSemesterService = async (
+  id: string
+): Promise<IAcademicSemesterType | null> => {
+  const result = await academicSemester.findById(id);
+
+  return result;
+};
+
+export const updateSingleSemesterService = async (
+  id: string,
+  updateData: Partial<IAcademicSemesterType>
+): Promise<IAcademicSemesterType | null> => {
+  if (
+    updateData.title &&
+    updateData.code &&
+    titleCodeMapper[updateData.title] !== updateData.code
+  ) {
+    throw new ApiError(
+      httpStatus.BAD_REQUEST,
+      `Academic Semester Code Is ${
+        titleCodeMapper[updateData.title]
+      } But You Give ${updateData.code} That Is Wrong`
+    );
+  }
+  const result = await academicSemester.findOneAndUpdate(
+    { _id: id },
+    updateData
+  );
+
+  return result;
+};
+
+export const deleteSingleSemesterService = async (
+  id: string
+): Promise<IAcademicSemesterType | null> => {
+  const result = await academicSemester.findByIdAndDelete({ _id: id });
+
+  return result;
 };
