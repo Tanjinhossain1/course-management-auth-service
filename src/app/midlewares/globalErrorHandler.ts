@@ -3,6 +3,7 @@ import config from '../../config';
 import { IGenericErrorMessage } from '../../types/errors';
 import {
   handleValidationError,
+  validationCastError,
   validationZodError,
 } from '../../errors/handleValidationError';
 import { IErrorReturnResponseType } from '../../types/common';
@@ -39,6 +40,13 @@ export const globalErrorHandler: ErrorRequestHandler = (
           },
         ]
       : [];
+  } else if (err?.name === 'CastError') {
+    /* ************ Cast Error handler *********** */
+    const getValidationCastError: IErrorReturnResponseType =
+      validationCastError(err);
+    statusCode = getValidationCastError.statusCode;
+    message = getValidationCastError.message;
+    errorMessages = getValidationCastError.errorMessages;
   } else if (err instanceof ZodError) {
     /* ************ Zod validation Error handler *********** */
     const getValidateZodError: IErrorReturnResponseType =
