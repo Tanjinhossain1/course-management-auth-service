@@ -111,7 +111,10 @@ export const updateSingleSemesterService = async (
   }
   const result = await academicSemester.findOneAndUpdate(
     { _id: id },
-    updateData
+    updateData,
+    {
+      new: true,
+    }
   );
 
   return result;
