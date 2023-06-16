@@ -39,4 +39,4 @@ academicSemesterSchema.pre('save', async function (next) {
 export const academicSemester = mongoose.model<
   IAcademicSemesterType,
   AcademicSemesterModel
->('academicSemester', academicSemesterSchema);
+>('AcademicSemester', academicSemesterSchema);
