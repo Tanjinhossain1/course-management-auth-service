@@ -16,4 +16,4 @@ const academicFacultySchema = new Schema<IAcademicFacultyType>(
 export const academicFaculty = mongoose.model<
   IAcademicFacultyType,
   AcademicFacultyModel
->('academicFaculty', academicFacultySchema);
+>('AcademicFaculty', academicFacultySchema);
