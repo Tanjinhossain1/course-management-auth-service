@@ -38,6 +38,6 @@ const userSchema = new Schema<IUserType>(
 );
 
 export const UserModel = mongoose.model<IUserType, UserModelMethod>(
-  'Users',
+  'MyUsers',
   userSchema
 );
