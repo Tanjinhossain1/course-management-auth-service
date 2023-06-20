@@ -1,0 +1,44 @@
+import { Model, Types } from 'mongoose';
+import { IAcademicDepartmentType } from '../academicDepartment/academicDepartment.interface';
+import { IAcademicFacultyType } from '../academicFaculty/academicFaculty.interface';
+// import { IAcademicDepartment } from '../academicDepartment/academicDepartment.interfaces';
+// import { IAcademicFaculty } from '../academicFaculty/academicFaculty.interfaces';
+
+export type UserName = {
+  firstName: string;
+  lastName: string;
+  middleName: string;
+};
+
+export type IFaculty = {
+  id: string;
+  name: UserName;
+  profileImage: string;
+  dateOfBirth?: string;
+  email: string;
+  contactNo: string;
+  emergencyContactNo: string;
+  gender?: 'male' | 'female';
+  permanentAddress?: string;
+  presentAddress?: string;
+  bloodGroup?: 'A+' | 'A-' | 'B+' | 'B-' | 'AB+' | 'AB-' | 'O+' | 'O-';
+
+  academicDepartment: Types.ObjectId | IAcademicDepartmentType;
+  academicFaculty: Types.ObjectId | IAcademicFacultyType;
+  designation: string;
+};
+
+export type FacultyModel = Model<IFaculty, Record<string, unknown>>;
+
+export type IFacultyFilters = {
+  searchTerm?: string;
+  id?: string;
+  email?: string;
+  contactNo?: string;
+  emergencyContactNo?: string;
+  gender?: 'male' | 'female';
+  bloodGroup?: 'A+' | 'A-' | 'B+' | 'B-' | 'AB+' | 'AB-' | 'O+' | 'O-';
+  academicDepartment?: string;
+  academicFaculty?: string;
+  designation?: string;
+};
