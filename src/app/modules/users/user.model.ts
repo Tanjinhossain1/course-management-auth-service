@@ -1,5 +1,7 @@
 import mongoose, { Schema } from 'mongoose';
 import { IUserType, UserModelMethod } from './user.interface';
+import bcrypt from 'bcrypt';
+import config from '../../../config';
 
 const userSchema = new Schema<IUserType>(
   {
@@ -20,14 +22,14 @@ const userSchema = new Schema<IUserType>(
       type: Schema.Types.ObjectId,
       ref: 'Student',
     },
-    // faculty: {
-    //   type: Schema.Types.ObjectId,
-    //   ref: 'Faculty',
-    // },
-    // Admin: {
-    //   type: Schema.Types.ObjectId,
-    //   ref: 'Admin',
-    // },
+    faculty: {
+      type: Schema.Types.ObjectId,
+      ref: 'Faculty',
+    },
+    admin: {
+      type: Schema.Types.ObjectId,
+      ref: 'Admin',
+    },
   },
   {
     timestamps: true,
@@ -36,6 +38,16 @@ const userSchema = new Schema<IUserType>(
     },
   }
 );
+
+userSchema.pre('save', async function (next) {
+  // hashing user password
+  this.password = await bcrypt.hash(
+    this.password,
+    Number(config.bcrypt_salt_rounds)
+  );
+
+  next();
+});
 
 export const UserModel = mongoose.model<IUserType, UserModelMethod>(
   'MyUsers',
