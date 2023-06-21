@@ -6,14 +6,10 @@ export type IUserType = {
   password: string;
   role: string;
 
+  needPasswordChange: true | false;
   student?: Types.ObjectId | IStudentType;
   faculty?: Types.ObjectId;
   admin?: Types.ObjectId;
-  // faculty?: Types.ObjectId | IUserFaculty;
-  // admin?: Types.ObjectId | IUserAdmin;
-  // createdDate
-  // updateDate
-  // studentId || adminId || facultyId
 };
 
 export type UserModelMethod = Model<IUserType, Record<string, unknown>>;

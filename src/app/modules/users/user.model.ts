@@ -17,6 +17,11 @@ const userSchema = new Schema<IUserType>(
     password: {
       type: String,
       required: true,
+      select: 0,
+    },
+    needPasswordChange: {
+      type: Boolean,
+      default: true,
     },
     student: {
       type: Schema.Types.ObjectId,
