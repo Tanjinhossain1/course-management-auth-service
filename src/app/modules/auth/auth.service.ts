@@ -8,9 +8,9 @@ import {
   IRefreshTokenResponseType,
 } from './auth.interface';
 import ApiError from '../../../errors/ApiError';
-import jwt, { JwtPayload, Secret } from 'jsonwebtoken';
+import { JwtPayload, Secret } from 'jsonwebtoken';
 import config from '../../../config';
-import { createToken } from '../../../helper/createJwtToken';
+import { createToken, verifyToken } from '../../../helper/createJwtToken';
 
 export const loginUserService = async (
   user: ILoginUserType
@@ -29,17 +29,16 @@ export const loginUserService = async (
   ) {
     throw new ApiError(httpStatus.UNAUTHORIZED, 'Password Is Incorrect !');
   }
-  const { needPasswordChange, id: userId, role } = isUserExist;
-  const tokenObject = { id: userId, role: role };
+  const { id: userId, role, needPasswordChange } = isUserExist;
 
   const accessToken = createToken(
-    tokenObject,
+    { userId, role },
     config.jwt.jwt_access_secret as Secret,
     config.jwt.jwt_expires_in as string
   );
 
   const refreshToken = createToken(
-    tokenObject,
+    { userId, role },
     config.jwt.jwt_refresh_secret as Secret,
     config.jwt.jwt_refresh_expires as string
   );
@@ -56,11 +55,8 @@ export const refreshTokenService = async (
 ): Promise<IRefreshTokenResponseType> => {
   let verifiedToken = null;
   try {
-    verifiedToken = jwt.verify(token, config.jwt.jwt_refresh_secret as Secret);
-    // verifiedToken = verifyToken(
-    //   token,
-    //   config.jwt.jwt_refresh_secret as Secret
-    //   );
+    // verifiedToken = jwt.verify(token, config.jwt.jwt_refresh_secret as Secret);
+    verifiedToken = verifyToken(token, config.jwt.jwt_refresh_secret as Secret);
   } catch (err) {
     throw new ApiError(httpStatus.FORBIDDEN, 'Invalid Refresh Token');
   }
