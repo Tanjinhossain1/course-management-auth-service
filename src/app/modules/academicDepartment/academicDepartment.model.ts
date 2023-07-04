@@ -9,7 +9,7 @@ const academicDepartmentSchema = new Schema<IAcademicDepartmentType>(
     title: { type: String, required: true, unique: true },
     academicFaculty: {
       type: Schema.Types.ObjectId,
-      ref: 'academicFaculty',
+      ref: 'AcademicFaculty',
     },
   },
   {
