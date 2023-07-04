@@ -16,3 +16,7 @@ export type IVerifiedLoginUserType = {
   userId: string;
   role: USER_ROLE_ENUM;
 };
+export type IPasswordChangeType = {
+  newPassword: string;
+  oldPassword: string;
+};

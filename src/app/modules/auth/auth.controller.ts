@@ -2,7 +2,11 @@ import { Request, Response } from 'express';
 import { clearableAsync } from '../../../shareble/clearableAsync';
 import { sendResponse } from '../../../shareble/sendResponce';
 import httpStatus from 'http-status';
-import { loginUserService, refreshTokenService } from './auth.service';
+import {
+  loginUserService,
+  refreshTokenService,
+  changePasswordService,
+} from './auth.service';
 import config from '../../../config';
 import {
   ILoginUserResponseType,
@@ -31,6 +35,7 @@ export const loginUserController = clearableAsync(
     });
   }
 );
+
 export const createRefreshTokenController = clearableAsync(
   async (req: Request, res: Response) => {
     const { refreshToken } = req.cookies;
@@ -49,6 +54,21 @@ export const createRefreshTokenController = clearableAsync(
       success: true,
       message: 'User logged in successfully !',
       data: result,
+    });
+  }
+);
+
+export const changePasswordController = clearableAsync(
+  async (req: Request, res: Response) => {
+    const userDetail = req.user;
+    const { ...UpdatePasswordData } = req.body;
+
+    await changePasswordService(userDetail, UpdatePasswordData);
+
+    sendResponse<ILoginUserResponseType>(res, {
+      statusCode: httpStatus.OK,
+      success: true,
+      message: 'Password Change Successfully !',
     });
   }
 );
