@@ -20,6 +20,7 @@ export const createStudentService = async (
   if (!user.password) {
     user.password = config.default_student_password as string;
   }
+
   // set role
   user.role = 'student';
 
@@ -87,6 +88,7 @@ export const createFacultyService = async (
   if (!user.password) {
     user.password = config.default_faculty_pass as string;
   }
+
   // set role
   user.role = 'faculty';
 

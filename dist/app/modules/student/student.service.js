@@ -1,124 +1,177 @@
-"use strict";
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+'use strict';
+var __awaiter =
+  (this && this.__awaiter) ||
+  function (thisArg, _arguments, P, generator) {
+    function adopt(value) {
+      return value instanceof P
+        ? value
+        : new P(function (resolve) {
+            resolve(value);
+          });
+    }
     return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
+      function fulfilled(value) {
+        try {
+          step(generator.next(value));
+        } catch (e) {
+          reject(e);
         }
+      }
+      function rejected(value) {
+        try {
+          step(generator['throw'](value));
+        } catch (e) {
+          reject(e);
+        }
+      }
+      function step(result) {
+        result.done
+          ? resolve(result.value)
+          : adopt(result.value).then(fulfilled, rejected);
+      }
+      step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+  };
+var __rest =
+  (this && this.__rest) ||
+  function (s, e) {
+    var t = {};
+    for (var p in s)
+      if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === 'function')
+      for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+        if (
+          e.indexOf(p[i]) < 0 &&
+          Object.prototype.propertyIsEnumerable.call(s, p[i])
+        )
+          t[p[i]] = s[p[i]];
+      }
     return t;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteSingleStudentService = exports.updateSingleStudentService = exports.getSingleStudentService = exports.getAllStudentServices = void 0;
-const paginationHelper_1 = require("../../../helper/paginationHelper");
-const student_constant_1 = require("./student.constant");
-const student_model_1 = require("./student.model");
-const ApiError_1 = __importDefault(require("../../../errors/ApiError"));
-const http_status_1 = __importDefault(require("http-status"));
-const getAllStudentServices = (filters, pagination) => __awaiter(void 0, void 0, void 0, function* () {
-    const { searchTerm } = filters, filtersData = __rest(filters, ["searchTerm"]);
-    const { skip, limit, page, sortBy, sortOrder } = (0, paginationHelper_1.calculatePagination)(pagination);
+  };
+var __importDefault =
+  (this && this.__importDefault) ||
+  function (mod) {
+    return mod && mod.__esModule ? mod : { default: mod };
+  };
+Object.defineProperty(exports, '__esModule', { value: true });
+exports.deleteSingleStudentService =
+  exports.updateSingleStudentService =
+  exports.getSingleStudentService =
+  exports.getAllStudentServices =
+    void 0;
+const paginationHelper_1 = require('../../../helper/paginationHelper');
+const student_constant_1 = require('./student.constant');
+const student_model_1 = require('./student.model');
+const ApiError_1 = __importDefault(require('../../../errors/ApiError'));
+const http_status_1 = __importDefault(require('http-status'));
+const getAllStudentServices = (filters, pagination) =>
+  __awaiter(void 0, void 0, void 0, function* () {
+    const { searchTerm } = filters,
+      filtersData = __rest(filters, ['searchTerm']);
+    const { skip, limit, page, sortBy, sortOrder } = (0,
+    paginationHelper_1.calculatePagination)(pagination);
     const sortConditions = {};
     const andConditions = [];
     if (searchTerm) {
-        andConditions.push({
-            $or: student_constant_1.studentFilterableFields.map(field => ({
-                [field]: {
-                    $regex: searchTerm,
-                    $options: 'i',
-                },
-            })),
-        });
+      andConditions.push({
+        $or: student_constant_1.studentFilterableFields.map(field => ({
+          [field]: {
+            $regex: searchTerm,
+            $options: 'i',
+          },
+        })),
+      });
     }
     if (Object.keys(filtersData).length) {
-        andConditions.push({
-            $and: Object.entries(filtersData).map(([field, value]) => ({
-                [field]: value,
-            })),
-        });
+      andConditions.push({
+        $and: Object.entries(filtersData).map(([field, value]) => ({
+          [field]: value,
+        })),
+      });
     }
-    const filteringCondition = andConditions.length > 0 ? { $and: andConditions } : {};
+    const filteringCondition =
+      andConditions.length > 0 ? { $and: andConditions } : {};
     if (sortBy && sortOrder) {
-        sortConditions[sortBy] = sortOrder;
+      sortConditions[sortBy] = sortOrder;
     }
     const result = yield student_model_1.StudentModel.find(filteringCondition)
-        .populate('academicSemester')
-        .populate('academicDepartment')
-        .populate('academicFaculty')
-        .sort(sortConditions)
-        .skip(skip)
-        .limit(limit);
-    const total = yield student_model_1.StudentModel.countDocuments(filteringCondition);
+      .populate('academicSemester')
+      .populate('academicDepartment')
+      .populate('academicFaculty')
+      .sort(sortConditions)
+      .skip(skip)
+      .limit(limit);
+    const total = yield student_model_1.StudentModel.countDocuments(
+      filteringCondition
+    );
     return {
-        paginated: {
-            page,
-            limit,
-            total,
-        },
-        data: result,
+      paginated: {
+        page,
+        limit,
+        total,
+      },
+      data: result,
     };
-});
+  });
 exports.getAllStudentServices = getAllStudentServices;
-const getSingleStudentService = (id) => __awaiter(void 0, void 0, void 0, function* () {
+const getSingleStudentService = id =>
+  __awaiter(void 0, void 0, void 0, function* () {
     const result = yield student_model_1.StudentModel.findById(id)
-        .populate('academicSemester')
-        .populate('academicDepartment')
-        .populate('academicFaculty');
+      .populate('academicSemester')
+      .populate('academicDepartment')
+      .populate('academicFaculty');
     return result;
-});
+  });
 exports.getSingleStudentService = getSingleStudentService;
-const updateSingleStudentService = (id, updateData) => __awaiter(void 0, void 0, void 0, function* () {
+const updateSingleStudentService = (id, updateData) =>
+  __awaiter(void 0, void 0, void 0, function* () {
     const isExist = yield student_model_1.StudentModel.findOne({ id });
     if (!isExist) {
-        throw new ApiError_1.default(http_status_1.default.NOT_FOUND, 'Student Not Found');
+      throw new ApiError_1.default(
+        http_status_1.default.NOT_FOUND,
+        'Student Not Found'
+      );
     }
-    const { name, guardian, localGuardian } = updateData, studentData = __rest(updateData, ["name", "guardian", "localGuardian"]);
+    const { name, guardian, localGuardian } = updateData,
+      studentData = __rest(updateData, ['name', 'guardian', 'localGuardian']);
     const updatedStudentData = Object.assign({}, studentData);
     if (name && Object.keys(name).length > 0) {
-        Object.keys(name).forEach(key => {
-            const nameKey = `name.${key}`;
-            updatedStudentData[nameKey] = name[key];
-        });
+      Object.keys(name).forEach(key => {
+        const nameKey = `name.${key}`;
+        updatedStudentData[nameKey] = name[key];
+      });
     }
     if (guardian && Object.keys(guardian).length > 0) {
-        Object.keys(guardian).forEach(key => {
-            const guardianKey = `guardian.${key}`;
-            updatedStudentData[guardianKey] =
-                guardian[key];
-        });
+      Object.keys(guardian).forEach(key => {
+        const guardianKey = `guardian.${key}`;
+        updatedStudentData[guardianKey] = guardian[key];
+      });
     }
     if (localGuardian && Object.keys(localGuardian).length > 0) {
-        Object.keys(localGuardian).forEach(key => {
-            const localGuardianKey = `localGuardian.${key}`;
-            updatedStudentData[localGuardianKey] =
-                localGuardian[key];
-        });
+      Object.keys(localGuardian).forEach(key => {
+        const localGuardianKey = `localGuardian.${key}`;
+        updatedStudentData[localGuardianKey] = localGuardian[key];
+      });
     }
-    const result = yield student_model_1.StudentModel.findOneAndUpdate({ id }, updatedStudentData, {
+    const result = yield student_model_1.StudentModel.findOneAndUpdate(
+      { id },
+      updatedStudentData,
+      {
         new: true,
-    });
+      }
+    );
     return result;
-});
+  });
 exports.updateSingleStudentService = updateSingleStudentService;
-const deleteSingleStudentService = (id) => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield student_model_1.StudentModel.findByIdAndDelete({ _id: id })
-        .populate('academicSemester')
-        .populate('academicDepartment')
-        .populate('academicFaculty');
+const deleteSingleStudentService = id =>
+  __awaiter(void 0, void 0, void 0, function* () {
+    const result = yield student_model_1.StudentModel.findByIdAndDelete({
+      _id: id,
+    })
+      .populate('academicSemester')
+      .populate('academicDepartment')
+      .populate('academicFaculty');
     return result;
-});
+  });
 exports.deleteSingleStudentService = deleteSingleStudentService;

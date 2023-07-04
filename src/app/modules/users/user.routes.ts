@@ -1,10 +1,12 @@
 import express from 'express';
 import {
+  createAdminController,
   createFacultyController,
   createStudentController,
 } from './user.controller';
 import { ValidationRequest } from '../../midlewares/validateRequest';
 import {
+  createAdminZodSchema,
   createFacultyZodSchema,
   userSchemaValidation,
 } from './user.validation';
@@ -22,4 +24,11 @@ usersRouter.post(
   ValidationRequest(createFacultyZodSchema),
   createFacultyController
 );
+
+usersRouter.post(
+  '/create-admin',
+  ValidationRequest(createAdminZodSchema),
+  createAdminController
+);
+
 export default usersRouter;

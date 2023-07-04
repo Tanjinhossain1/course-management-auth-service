@@ -1,13 +1,13 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+'use strict';
+Object.defineProperty(exports, '__esModule', { value: true });
 exports.pick = void 0;
 const pick = (obj, keys) => {
-    const finalObject = {};
-    for (const key of keys) {
-        if (obj && Object.hasOwnProperty.call(obj, key)) {
-            finalObject[key] = obj[key];
-        }
+  const finalObject = {};
+  for (const key of keys) {
+    if (obj && Object.hasOwnProperty.call(obj, key)) {
+      finalObject[key] = obj[key];
     }
-    return finalObject;
+  }
+  return finalObject;
 };
 exports.pick = pick;
